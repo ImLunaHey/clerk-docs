@@ -102,14 +102,14 @@ Install Clerk's React SDK by running the following command in your terminal:
   ```bash filename="terminal"
   yarn add @clerk/clerk-react
   ```
-  
+
   ```bash filename="terminal"
   pnpm add @clerk/clerk-react
   ```
 
 </CodeBlockTabs>
 
-### Set environment keys
+### Set environment variables
 
 In your React project's root folder, you may have an `.env.local` file alongside `package.json` and other configuration files. If you don't see it, create it.
 
@@ -171,11 +171,11 @@ import { query } from './_generated/server';
 
 export default query(async (ctx) => {
   const user = await ctx.auth.getUserIdentity();
-  
+
   if (user === null) {
     return null;
   }
-  
+
   return user.tokenIdentifier;
 });
 ```

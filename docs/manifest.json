@@ -30,6 +30,7 @@
     },
     [
       ["Overview", "/guides/overview"],
+      ["Use image optimization to improve app performance", "/guides/image-optimization/imageurl-image-optimization"],
       ["Implement basic Role Based Access Control with metadata", "/guides/basic-rbac"],
       ["Hide Personal Accounts and force organizations", "/guides/force-organizations"],
       ["Migrating to Clerk from Auth.js", "/guides/authjs-migration"]
@@ -484,7 +485,7 @@
       ["buildClerkProps()", "/references/nextjs/build-clerk-props"],
       "# Other References",
       ["clerkMiddleware()", "/references/nextjs/clerk-middleware"],
-      ["Authentication Object", "/references/nextjs/authentication-object"],
+      ["Auth Object", "/references/nextjs/auth-object"],
       "# Deprecated",
       ["authMiddleware()", "/references/nextjs/auth-middleware"],
       ["Use Clerk with Next.js 12 and older", "/references/nextjs/usage-with-older-versions"],

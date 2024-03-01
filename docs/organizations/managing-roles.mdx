@@ -11,11 +11,9 @@ The [`useOrganization()`](/docs/references/react/use-organization) hook can be u
 
 The [`useOrganization()`](/docs/references/react/use-organization) hook can also be used to retrieve the list of invitations for the currently active organization. The [`revoke`](/docs/references/javascript/organization-invitation#revoke) method can be called on the invitation object to revoke the invitation.
 
-Methods for [changing a member's role](/docs/references/backend/organization/update-organization-membership), [removing a member](/docs/references/backend/organization/delete-organization-membership), and [revoking an invitation](/docs/references/backend/organization/revoke-organization-invitation) are also available on the [Backend API](/docs/references/backend/overview). 
+Methods for [changing a member's role](/docs/references/backend/organization/update-organization-membership), [removing a member](/docs/references/backend/organization/delete-organization-membership), and [revoking an invitation](/docs/references/backend/organization/revoke-organization-invitation) are also available on the [Backend API](/docs/references/backend/overview).
 
 ## Usage
-
-{/* TODO (DOCS-316): Update and validate these examples. */}
 
 <CodeBlockTabs type="framework" options={["Next.js", "React", "JavaScript"]}>
 ```tsx filename="pages/organizations/[id].tsx"
@@ -43,7 +41,7 @@ export const OrgMembershipRequestsParams = {
   },
 }
 
-// View and manage active organization members, 
+// View and manage active organization members,
 // along with any pending invitations.
 // Invite new members.
 export default function Organization() {
@@ -147,8 +145,8 @@ export const OrgMembers = () => {
   )
 }
 
-// List of pending invitations to an organization. 
-// You can invite new organization members and 
+// List of pending invitations to an organization.
+// You can invite new organization members and
 // revoke already sent invitations.
 export const OrgInvitations = () => {
   const { isLoaded, invitations, memberships } = useOrganization({
@@ -396,7 +394,7 @@ export const OrgMembershipRequestsParams = {
   },
 }
 
-// View and manage active organization members, 
+// View and manage active organization members,
 // along with any pending invitations.
 // Invite new members.
 export default function Organization() {
@@ -500,8 +498,8 @@ export const OrgMembers = () => {
   )
 }
 
-// List of pending invitations to an organization. 
-// You can invite new organization members and 
+// List of pending invitations to an organization.
+// You can invite new organization members and
 // revoke already sent invitations.
 export const OrgInvitations = () => {
   const { isLoaded, invitations, memberships } = useOrganization({
@@ -813,10 +811,10 @@ const SelectRole = (props: SelectRoleProps) => {
     const organizationId = "org_XXXXXXX";
     const { data: organizationMemberships } = await window.Clerk.user.getOrganizationMemberships();
 
-    const currentMembership = organizationMemberships.find(membership 
+    const currentMembership = organizationMemberships.find(membership
       => membership.organization.id === organizationId);
     const currentOrganization = currentMembership.organization;
-    
+
     if (!currentOrganization) {
       return;
     }

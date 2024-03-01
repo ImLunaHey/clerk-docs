@@ -21,8 +21,8 @@ description: Add authentication and user management to your React app with Clerk
 >
 - Create a new React application using Vite
 - Install `@clerk/clerk-react`
-- Set up your environment keys
-- Import the publishable key
+- Set up your environment variables
+- Import the Clerk publishable key
 - Add `<ClerkProvider />` to your application
 - Create a header with Clerk components for users to sign in and out
 </TutorialHero>
@@ -81,10 +81,10 @@ To get started using Clerk with React, add the SDK to your project:
 
 </CodeBlockTabs>
 
-### Set your environment keys
+### Set your environment variables
 
 1. If you don't have an `.env.local` file in the root directory of your React project, create one now.
-2. Find your publishable key. If you're signed into Clerk, the `.env.local` snippet below will contain your key. Otherwise:
+2. Find your Clerk publishable key. If you're signed into Clerk, the `.env.local` snippet below will contain your key. Otherwise:
   - Navigate to your [Clerk Dashboard](https://dashboard.clerk.com/last-active?path=api-keys).
   - Select your application, then select **🔑 API Keys** in the sidebar menu.
   - You can copy your key from the **Quick Copy** section.
@@ -100,9 +100,9 @@ VITE_CLERK_PUBLISHABLE_KEY={{pub_key}}
 
 </InjectKeys>
 
-### Import the publishable key
+### Import the Clerk publishable key
 
-You will need to import your publishable key into your application. You can add an `if` statement to check that it is imported and that it exists. This will prevent running the application without the publishable key, and will also prevent TypeScript errors.
+You will need to import your Clerk publishable key into your application. You can add an `if` statement to check that it is imported and that it exists. This will prevent running the application without the publishable key, and will also prevent TypeScript errors.
 
 ```tsx filename="src/main.tsx" {6-7, 9-11}
 import React from 'react'

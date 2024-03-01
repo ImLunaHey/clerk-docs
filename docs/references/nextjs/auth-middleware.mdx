@@ -34,7 +34,7 @@ With the recommended matcher, all routes are protected by Clerk's authentication
 
 ### Default behaviour
 
-If there is no `afterAuth` present in the middleware, then `authMiddleware` will fall back to its default behavior:
+If there is no `afterAuth` present in the middleware, then `authMiddleware()` will fall back to its default behavior:
 
 - If the [`.env` based settings](/docs/references/nextjs/custom-signup-signin-pages#update-your-environment-variables) for the sign-in and sign-up routes are present, add the sign-in and sign-up routes to any routes listed in `publicRoutes`.
 - If the `.env` based settings are not present, add `/sign-in` and `/sign-up` to any routes listed in `publicRoutes`.
@@ -44,7 +44,7 @@ If there is no `afterAuth` present in the middleware, then `authMiddleware` will
 
 #### Example
 
-Assuming that the `.env` based settings for sign-in and sign-up are set to `/sign-in` and `/sign-up` respectively, the following `authMiddleware` would make the routes `/`, `/contact`, `/sign-in` and `/sign-up` public, no routes ignored, and all remaining routes protected.
+Assuming that the `.env` based settings for sign-in and sign-up are set to `/sign-in` and `/sign-up` respectively, the following `authMiddleware()` would make the routes `/`, `/contact`, `/sign-in` and `/sign-up` public, no routes ignored, and all remaining routes protected.
 
 <CodeBlockTabs options={["middleware.ts", ".env.local"]}>
 
@@ -249,7 +249,7 @@ The `authMiddleware()` method accepts an optional object. The following options 
 
 | Name                               | Type                 | Description                                                                                                                                                                                                                                                                                                                                     |
 | ---------------------------------- | -------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `afterAuth?`                       | `function`           | Called after the authentication middleware is executed. This function has access to the [`Authentication`](/docs/references/nextjs/authentication-object) object and can be used to execute logic based on the auth state.                                                                                                                      |
+| `afterAuth?`                       | `function`           | Called after the authentication middleware is executed. This function has access to the [`Auth`](/docs/references/nextjs/auth-object) object and can be used to execute logic based on the auth state.                                                                                                                      |
 | `apiRoutes?`                       | `string[]`           | A list of routes that should return 401 if the user is not logged in. You can use glob patterns to match multiple routes or a function to match against the request object. For example: `['/foo', '/bar(.*)']` or `[/^\/foo\/.*$/]`                                                                                                            |
 | `audience?`                        | `string \| string[]` | A string or list of [audiences](https://datatracker.ietf.org/doc/html/rfc7519#section-4.1.3). If passed, it is checked against the `aud` claim in the token.                                                                                                                                                                                    |
 | `authorizedParties?`               | `string[]`           | An allowlist of origins to verify against, to protect your application from the subdomain cookie leaking attack.<br/>For example:<br/>`['http://localhost:3000', 'https://example.com']`<br/>For more information, refer to the [reference guide](/docs/references/nodejs/token-verification#validate-the-authorized-party-of-a-session-token). |

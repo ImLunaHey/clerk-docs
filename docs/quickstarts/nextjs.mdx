@@ -52,10 +52,10 @@ pnpm add @clerk/nextjs@beta
 
 </CodeBlockTabs>
 
-### Set your environment keys
+### Set your environment variables
 
 1. If you don't have an `.env.local` file in the root directory of your Next.js project, create one now.
-2. Find your publishable key and secret key. If you're signed into Clerk, the `.env.local` snippet below will contain your keys. Otherwise:
+2. Find your Clerk publishable key and secret key. If you're signed into Clerk, the `.env.local` snippet below will contain your keys. Otherwise:
   - Navigate to your [Clerk Dashboard](https://dashboard.clerk.com/last-active?path=api-keys).
   - Select your application, then select **🔑 API Keys** in the sidebar menu.
   - You can copy your keys from the **Quick Copy** section.
@@ -140,7 +140,6 @@ You can control which content signed in and signed out users can see with Clerk'
 
 - [`<SignedIn>`](/docs/components/control/signed-in): Children of this component can only be seen while **signed in**.
 - [`<SignedOut>`](/docs/components/control/signed-out): Children of this component can only be seen while **signed out**.
-
 - [`<UserButton />`](/docs/components/user/user-button): A prebuilt component that comes styled out of the box to show the avatar from the account the user is signed in with.
 - [`<SignInButton />`](/docs/components/unstyled/sign-in-button): An unstyled component that links to the sign-in page or displays the sign-in modal.
 
